@@ -7,5 +7,6 @@ target/
 *.xlsx
 .DS_Store
 allure-results/
+.allure
 downloads/
 *.log
