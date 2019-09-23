@@ -12,6 +12,7 @@
     <properties>
         <driver>chrome</driver>
         <jdi.light.version>1.1.1</jdi.light.version>
+        <jdi.dark.version>1.0.1</jdi.dark.version>
         <allure.testng>2.7.0</allure.testng>
         <allure.maven>2.9</allure.maven>
         <jetty.version>9.4.12.RC2</jetty.version>
@@ -24,6 +25,11 @@
             <groupId>com.epam.jdi</groupId>
             <artifactId>jdi-light-html</artifactId>
             <version>${jdi.light.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-http</artifactId>
+            <version>${jdi.dark.version}</version>
         </dependency>
 
         <!--Allure config in parent-->
