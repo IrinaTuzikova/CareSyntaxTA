@@ -13,12 +13,13 @@ import static ebay.EbaySite.*;
 import static ebay.helpers.WaitingHelper.waitAllRequestsOnPage;
 
 public class HomePageTests  extends EbayTestsInit {
-
-    public String EMAIL_FOR_LOGIN = "AUTEmail@gmail.com";
-    public String PASSWORD_FOR_LOGIN = "AUT-fls";
-    public String SEARCHED_ITEM = "Intel NUC";
-    public String totalAmount = "";
-    public String userId = "";
+  
+   public String EMAIL_FOR_LOGIN = "AUTEmail@gmail.com";
+   public String PASSWORD_FOR_LOGIN = "AUT-fls";
+   public String SEARCHED_ITEM = "Intel NUC";
+    public String TYPE_OF_SORT = "Lowest price";
+   public String totalAmount = "";
+   public String userId = "";
 
     @Test(groups = "func")
     @Features(@Feature("Login"))
@@ -35,13 +36,14 @@ public class HomePageTests  extends EbayTestsInit {
         homePage.searchBtn.click();
         waitAllRequestsOnPage();
         searchResultPage.checkOpened();
-        totalAmount = searchResultPage.totalAmountOfFoundItems.getValue();
+        searchResultPage.sortDropdown.select(TYPE_OF_SORT);
+//        totalAmount = searchResultPage.totalAmountOfFoundItems.getValue();
         searchResultPage.buyItNowLink.click();
         searchResultPage.sizeOfMemory8GB.check();
         searchResultPage.conditionNew.check();
         searchResultPage.scrollToTop();
         waitAllRequestsOnPage();
-        searchResultPage.sortDropdown.select(searchResultPage.TYPE_OF_SORT);
+//        searchResultPage.sortDropdown.select(searchResultPage.TYPE_OF_SORT);
         searchResultPage.lowestPrice = searchResultPage.cheapestItemCellPrice.getValue();
         logger.toLog("Total number: " + totalAmount);
         logger.toLog("Lowest price: " + searchResultPage.lowestPrice);

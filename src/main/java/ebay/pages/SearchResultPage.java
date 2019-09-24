@@ -12,7 +12,6 @@ import com.epam.jdi.light.ui.html.elements.common.Text;
 
 public class SearchResultPage extends WebPage {
 
-    public String TYPE_OF_SORT = "Lowest price";
     public String lowestPrice = "";
 
     @Css(".srp-controls__count-heading span:nth-child(1)")
@@ -28,19 +27,16 @@ public class SearchResultPage extends WebPage {
     public Checkbox conditionNew;
 
     @JDropdown(
-            root = "#DashSortByContainer",
-            expand = ".caret-dn",
-            list = "#SortMenu>li",
-            value = "a.dropdown-toggle")
+            root = "#w8",
+            expand = "//div/*[@class='svg-icon x-flyout-arrow-down']",
+            list = "//*[contains(@class, 'srp-sort__menu')]/li",
+            value = ".srp-controls--selected-value")
     public Dropdown sortDropdown;
 
-    @XPath("//a[contains(@class, 'btn')][@title='Buy it now']")
+    @XPath("//ul[@class='fake-tabs__items']/li[4]")
     public Link buyItNowLink;
 
-    @XPath("//*[@id='ListViewInner']/*[1]")
-    public Link cheapestItemCell;
-
-    @XPath("//*[@id='ListViewInner']/*[1]/ul/li[@class='lvprice prc']")
+    @Css("#srp-river-results-listing1 .s-item__price")
     public Text cheapestItemCellPrice;
 
 }
