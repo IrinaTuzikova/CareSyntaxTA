@@ -8,7 +8,12 @@ import ebay.sections.LoginForm;
 
 public class LoginPage extends WebPage {
 
-    @Css("#InLineCreateAnAccount") public Link createAnAccountLink;
-    @Css(".signin-view-container") public LoginForm loginForm;
-    @Css("#sgnBt") public Button signInBtn;
+    @Css("#InLineCreateAnAccount")
+    public Link createAnAccountLink;
+
+    @Css(".signin-view-container")
+    public LoginForm loginForm;
+
+    @Css("#sgnBt")
+    public Button signInBtn;
 }

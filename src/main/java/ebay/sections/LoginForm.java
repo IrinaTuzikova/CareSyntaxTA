@@ -9,10 +9,14 @@ import io.qameta.allure.Step;
 
 public class LoginForm extends Form<User> {
 
-    @Css("#userid") public TextField emailField;
-    @Css("#pass") public TextField passwordField;
+    @Css("#userid")
+    public TextField emailField;
 
-    @Css("#sgnBt") public Button signInButton;
+    @Css("#pass")
+    public TextField passwordField;
+
+    @Css("#sgnBt")
+    public Button signInButton;
 
     @Step public void fillLoginForm(User user) {
         emailField.input(user.getEmail());

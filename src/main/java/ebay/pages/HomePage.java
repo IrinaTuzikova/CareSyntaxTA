@@ -9,9 +9,16 @@ import com.epam.jdi.light.ui.html.elements.common.TextField;
 public class HomePage extends WebPage {
 
     //ToDo Move to top right menu.
-    @Css(".mbg-id") public Text userIdText;
-    @Css("#gh-eb-My") public Button myEbayButton;
-    @Css("#gh-ac") public TextField searchField;
-    @Css("#gh-btn") public Button searchBtn;
+    @Css(".mbg-id")
+    public Text userIdText;
+
+    @Css("#gh-eb-My")
+    public Button myEbayButton;
+
+    @Css("#gh-ac")
+    public TextField searchField;
+
+    @Css("#gh-btn")
+    public Button searchBtn;
 
 }
