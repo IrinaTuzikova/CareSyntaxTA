@@ -9,6 +9,8 @@ public class EbaySite {
     @Url("/")
     public static HomePage homePage;
 
+    public static SearchResultPage searchResultPage;
+
     @Url("https://signin.ebay.co.uk") @Title("Sign in or Register | eBay")
     public static LoginPage loginPage;
 

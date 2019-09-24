@@ -28,7 +28,7 @@ public class CreateAccountTests extends EbayTestsInit {
         CreateAccountForm createAccountForm = createAccountPage.createAccountForm;
         createAccountForm.fill(randomGeneratedUser);
         createAccountForm.submit();
-        String filePath = FileReadAndWriteHelper.getAbsolutePathByFileName(PATH,"AlreadyCreatedUsers");
+        String filePath = FileReadAndWriteHelper.getAbsolutePathByFileName(PATH, "AlreadyCreatedUsers");
         FileReadAndWriteHelper.writeUserDetailsToTheFileWithName(filePath,
                 randomGeneratedUser.print());
     }

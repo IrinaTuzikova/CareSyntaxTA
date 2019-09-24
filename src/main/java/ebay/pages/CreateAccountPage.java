@@ -7,6 +7,7 @@ import ebay.sections.CreateAccountForm;
 
 public class CreateAccountPage  extends WebPage {
 
-    @Css("#pgWidth") public CreateAccountForm createAccountForm;
+    @Css("#pgWidth")
+    public CreateAccountForm createAccountForm;
 
 }

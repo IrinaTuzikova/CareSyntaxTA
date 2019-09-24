@@ -9,4 +9,9 @@
             <package name="ebay.tests"/>
         </packages>
     </test>
+    <test name="Reqres">
+        <packages>
+            <package name="reqres.tests"/>
+        </packages>
+    </test>
 </suite>
