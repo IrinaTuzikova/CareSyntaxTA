@@ -2,7 +2,6 @@ package ebay.tests;
 
 import ebay.EbayTestsInit;
 import ebay.entities.User;
-import ebay.helpers.WaitingHelper;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Features;
 import io.qameta.allure.Stories;
@@ -14,7 +13,7 @@ import static ebay.EbaySite.*;
 import static ebay.helpers.WaitingHelper.waitAllRequestsOnPage;
 
 public class HomePageTests  extends EbayTestsInit {
-
+  
    public String EMAIL_FOR_LOGIN = "AUTEmail@gmail.com";
    public String PASSWORD_FOR_LOGIN = "AUT-fls";
    public String SEARCHED_ITEM = "Intel NUC";
@@ -23,7 +22,7 @@ public class HomePageTests  extends EbayTestsInit {
    public String userId = "";
 
     @Test(groups = "func")
-    @Features(@Feature( "Login"))
+    @Features(@Feature("Login"))
     @Stories(@Story("Login"))
     public void searchAndCaptureIntelNUC() {
         navigationThroughSite.goToLoginPageFromHomePage();
@@ -49,8 +48,5 @@ public class HomePageTests  extends EbayTestsInit {
         logger.toLog("Total number: " + totalAmount);
         logger.toLog("Lowest price: " + searchResultPage.lowestPrice);
         logger.toLog("User ID: " + userId);
-
     }
-
-
 }
