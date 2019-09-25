@@ -11,6 +11,6 @@ public class UserGenerator {
             "autName" + currentTimeStamp,
             "autLastName" + currentTimeStamp,
             "autEmail" + currentTimeStamp + "@fls.com",
-            "autPassword" + currentTimeStamp
+            "autPass" + currentTimeStamp
     );
 }

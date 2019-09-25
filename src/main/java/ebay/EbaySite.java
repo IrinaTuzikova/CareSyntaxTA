@@ -17,6 +17,9 @@ public class EbaySite {
     @Url("https://reg.ebay.co.uk/") @Title("Sign in or Register | eBay")
     public static CreateAccountPage createAccountPage;
 
+    @Url("https://www.ebay.co.uk/myb/Summary") @Title("My eBay Summary")
+    public static SummaryPage summaryPage;
+
 
     /* This is not real page - adapter for all movements with actions through site. */
     public static NavigationThroughSite navigationThroughSite;

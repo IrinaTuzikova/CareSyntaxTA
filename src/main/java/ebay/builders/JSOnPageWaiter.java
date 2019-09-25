@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /* Code from this resource :: https://www.swtestacademy.com/selenium-wait-javascript-angular-ajax/
  *  Check for updates there for the new versions. */
 
-public class JSWaiter {
+public class JSOnPageWaiter {
 
     private static WebDriver jsWaitDriver;
     private static WebDriverWait jsWait;

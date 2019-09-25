@@ -1,11 +1,11 @@
 package ebay.helpers;
 
-import ebay.builders.JSWaiter;
+import ebay.builders.JSOnPageWaiter;
 
 public class WaitingHelper {
 
     public static void waitAllRequestsOnPage() {
-        JSWaiter waiter = new JSWaiter();
+        JSOnPageWaiter waiter = new JSOnPageWaiter();
         waiter.waitAllRequest();
     }
 }

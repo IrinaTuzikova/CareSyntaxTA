@@ -9,25 +9,20 @@ import static io.restassured.http.ContentType.JSON;
 @ServiceDomain("https://reqres.in/api")
 
 public class ReqresApi {
-    public static final String USERS = "/users";
 
-    @ContentType(JSON) @GET(USERS)
+    @ContentType(JSON) @GET("/users")
     public static RestMethod usersGet;
 
-    //GET first names of all users on page 2
-    @ContentType(JSON) @GET("/users?page={page}")
-    public static RestMethod getUserWithNameAndOnConcretePage;
+    @ContentType(JSON) @GET("/users?page={page_num}")
+    public static RestMethod getUserListOnConcretePage;
 
-    //Create a new user with the name "Arnold"
-    //and Job as "Dev" and print new users details name and ID
     @ContentType(JSON) @POST("/users")
     public static RestMethod postCreateUserWithNameAndJob;
 
-    //Update the user's name to "Sam"
     @ContentType(JSON) @PUT("/users/{user_id}")
-    public static RestMethod updateUserName;
+    public static RestMethod updateUserById;
 
-    //Delete the user
     @ContentType(JSON) @DELETE("/users/{user_id}")
     public static RestMethod deleteUserById;
+
 }
