@@ -18,7 +18,8 @@ import static reqres.ReqresApi.*;
 
 public class ReqresTests {
 
-    String PAGE_NUM = "2";
+    public static final int DEFAULT_AMOUNT_OF_USERS_PER_PAGE = 6;
+    public static final String PAGE_NUM = "2";
 
     @BeforeClass
     public void initService() {
@@ -45,8 +46,8 @@ public class ReqresTests {
                     d.pathParams.add("page_num", PAGE_NUM);
                 }));
         response.isOk();
-        response.assertThat().body("page", equalTo("2"));
-        response.assertThat().body("data.first_name.size()", equalTo(6));
+        response.assertThat().body("page", equalTo(PAGE_NUM));
+        response.assertThat().body("data.first_name.size()", equalTo(DEFAULT_AMOUNT_OF_USERS_PER_PAGE));
 
     }
 

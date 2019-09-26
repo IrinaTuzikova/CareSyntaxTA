@@ -19,6 +19,7 @@ public class SearchTests extends EbayTestsInit {
     public String TYPE_OF_SORT = "Lowest price";
     public String totalAmount = "";
     public String userId = "";
+    public String lowestPriceValue = "";
 
     @Test(groups = "func")
     @Features(@Feature("Login"))
@@ -37,9 +38,9 @@ public class SearchTests extends EbayTestsInit {
         searchResultPage.scrollToTop();
         waitAllRequestsOnPage();
         searchResultPage.sortDropdown.select(TYPE_OF_SORT);
-        searchResultPage.lowestPrice = searchResultPage.cheapestItemCellPrice.getValue();
+        lowestPriceValue = searchResultPage.cheapestItemCellPrice.getValue();
         logger.toLog("Total number: " + totalAmount);
-        logger.toLog("Lowest price: " + searchResultPage.lowestPrice);
+        logger.toLog("Lowest price: " + lowestPriceValue);
         logger.toLog("User ID: " + userId);
     }
 
