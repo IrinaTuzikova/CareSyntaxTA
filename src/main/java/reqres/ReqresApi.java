@@ -11,6 +11,10 @@ import static io.restassured.http.ContentType.JSON;
 public class ReqresApi {
 
     @ContentType(JSON) @GET("/users")
+    @QueryParameter(name = "page", value="2")
+    public static RestMethod<Info> getInfoOnSecondPage;
+
+    @ContentType(JSON) @GET("/users")
     public static RestMethod usersGet;
 
     @ContentType(JSON) @GET("/users")

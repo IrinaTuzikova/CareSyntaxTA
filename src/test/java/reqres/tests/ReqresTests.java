@@ -7,21 +7,21 @@ import io.qameta.allure.Stories;
 import io.qameta.allure.Story;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import reqres.Info;
 import reqres.ReqresApi;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 import static com.epam.http.requests.RequestData.requestBody;
 import static com.epam.http.requests.RequestData.requestData;
 import static com.epam.http.requests.ServiceInit.init;
 import static java.lang.String.format;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static reqres.ReqresApi.*;
+import static com.epam.jdi.light.settings.WebSettings.logger;
 
 public class ReqresTests {
-
-    public static final int DEFAULT_AMOUNT_OF_USERS_PER_PAGE = 6;
-    public static final String PAGE_NUM = "2";
 
     @BeforeClass
     public void initService() {
@@ -42,14 +42,16 @@ public class ReqresTests {
     @Test(groups = "func")
     @Features(@Feature( "API"))
     @Stories(@Story("Users"))
-    public void getFirstNamesOfTheUsersOnConcretePage(){
-        RestResponse response = getUserListOnConcretePage
-                .call(requestData(d ->
-                            d.queryParams.add("page", PAGE_NUM)
-                ));
-        response.isOk();
-        response.assertThat().body("page", equalTo(Integer.parseInt(PAGE_NUM)));
-        response.assertThat().body("data.first_name.size()", equalTo(DEFAULT_AMOUNT_OF_USERS_PER_PAGE));
+    public void getFirstNamesOfTheUsersOnConcretePage() {
+        ArrayList<String> firstNames = new ArrayList<>();
+        Info entity = getInfoOnSecondPage
+                .asData(Info.class);
+        int amountOfUsersPerPage = entity.per_page;
+        for (int i = 0; i < amountOfUsersPerPage; i++){
+            String firstName = (String) ((LinkedHashMap) ((ArrayList) entity.data).get(i)).get("first_name");
+            firstNames.add(firstName);
+        }
+        logger.toLog("[AUT-INFO] The final list is :: " + firstNames.toString());
     }
 
     /* 3. Create a new user with the name "Arnold" and
