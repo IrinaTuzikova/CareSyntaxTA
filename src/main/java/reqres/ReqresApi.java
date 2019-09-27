@@ -13,7 +13,7 @@ public class ReqresApi {
     @ContentType(JSON) @GET("/users")
     public static RestMethod usersGet;
 
-    @ContentType(JSON) @GET("/users?page={page_num}")
+    @ContentType(JSON) @GET("/users")
     public static RestMethod getUserListOnConcretePage;
 
     @ContentType(JSON) @POST("/users")

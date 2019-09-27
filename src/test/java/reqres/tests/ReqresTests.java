@@ -13,6 +13,8 @@ import static com.epam.http.requests.RequestData.requestBody;
 import static com.epam.http.requests.RequestData.requestData;
 import static com.epam.http.requests.ServiceInit.init;
 import static java.lang.String.format;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static reqres.ReqresApi.*;
 
@@ -42,13 +44,12 @@ public class ReqresTests {
     @Stories(@Story("Users"))
     public void getFirstNamesOfTheUsersOnConcretePage(){
         RestResponse response = getUserListOnConcretePage
-                .call(requestData(d -> {
-                    d.pathParams.add("page_num", PAGE_NUM);
-                }));
+                .call(requestData(d ->
+                            d.queryParams.add("page", PAGE_NUM)
+                ));
         response.isOk();
-        response.assertThat().body("page", equalTo(PAGE_NUM));
+        response.assertThat().body("page", equalTo(Integer.parseInt(PAGE_NUM)));
         response.assertThat().body("data.first_name.size()", equalTo(DEFAULT_AMOUNT_OF_USERS_PER_PAGE));
-
     }
 
     /* 3. Create a new user with the name "Arnold" and
