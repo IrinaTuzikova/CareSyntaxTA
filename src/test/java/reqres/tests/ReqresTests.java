@@ -1,5 +1,6 @@
 package reqres.tests;
 
+import com.epam.http.response.ResponseStatusType;
 import com.epam.http.response.RestResponse;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Features;
@@ -98,5 +99,39 @@ public class ReqresTests {
                     d.pathParams.add("user_id", userId);
                 }));
         response.isOk();
+    }
+
+    /* 6. Get resource list */
+    @Test(groups = "func")
+    @Features(@Feature( "API"))
+    @Stories(@Story("resource"))
+    public void getResourcesListAndCheckItIsNotEmpty() {
+        RestResponse response = getResource
+                .call();
+        response.isOk();
+    }
+
+    /* 7. Get single resource */
+    @Test(groups = "func")
+    @Features(@Feature( "API"))
+    @Stories(@Story("resource"))
+    public void getSingleResourcesAndCheckItIsNotEmpty() {
+        String resourceId = "2";
+        RestResponse response = getSingleResource
+                .call(requestData(d ->
+                        d.pathParams.add("resource_id", resourceId)));
+        response.isOk();
+    }
+
+    /* 8. Single resource not found */
+    @Test(groups = "func")
+    @Features(@Feature( "API"))
+    @Stories(@Story("resource"))
+    public void getUnavailableSingleResourcesAndCheckItIsNotEmpty() {
+        String resourceId = "23";
+        RestResponse response = getSingleResource
+                .call(requestData(d ->
+                        d.pathParams.add("resource_id", resourceId)));
+        response.isStatus(ResponseStatusType.getStatusTypeFromCode(404));
     }
 }

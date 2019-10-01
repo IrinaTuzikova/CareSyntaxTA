@@ -3,8 +3,8 @@ package reqres;
 import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.annotations.*;
 import com.epam.http.requests.RestMethod;
-
 import static io.restassured.http.ContentType.JSON;
+
 
 @ServiceDomain("https://reqres.in/api")
 
@@ -16,6 +16,12 @@ public class ReqresApi {
 
     @ContentType(JSON) @GET("/users")
     public static RestMethod usersGet;
+
+    @ContentType(JSON) @GET("/unknown")
+    public static RestMethod getResource;
+
+    @ContentType(JSON) @GET("/unknown/{resource_id}")
+    public static RestMethod getSingleResource;
 
     @ContentType(JSON) @GET("/users")
     public static RestMethod getUserListOnConcretePage;
