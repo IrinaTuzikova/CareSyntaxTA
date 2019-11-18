@@ -1,19 +1,19 @@
 package qvident.section;
 
-import com.epam.jdi.light.elements.composite.Section;
-import com.epam.jdi.light.elements.pageobjects.annotations.locators.Css;
+import com.epam.jdi.light.elements.composite.Form;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.XPath;
 import com.epam.jdi.light.ui.html.elements.common.Button;
 import com.epam.jdi.light.ui.html.elements.common.TextField;
+import qvident.entities.User;
 
-public class LoginForm extends Section {
+public class LoginForm extends Form<User> {
 
-    @Css("")
-    public TextField userNameField;
+    @XPath("//input[@placeholder='Username']")
+    public TextField login;
 
+    @XPath("//input[@placeholder='Password']")
+    public TextField password;
 
-    @Css("")
-    public TextField passwordField;
-
-    @Css("")
+    @XPath("//button[@type='submit']")
     public Button signInButton;
 }

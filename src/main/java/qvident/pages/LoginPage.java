@@ -1,13 +1,13 @@
 package qvident.pages;
 
 import com.epam.jdi.light.elements.composite.WebPage;
-import com.epam.jdi.light.elements.pageobjects.annotations.locators.Css;
-import ebay.sections.LoginForm;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.XPath;
+import qvident.section.LoginForm;
+
 
 public class LoginPage extends WebPage {
 
-    @Css(".form-signin")
+    @XPath("//form")
     public LoginForm loginForm;
-
 
 }

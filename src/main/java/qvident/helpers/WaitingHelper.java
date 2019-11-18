@@ -1,11 +1,11 @@
-package ebay.helpers;
+package qvident.helpers;
 
-import ebay.builders.JSOnPageWaiter;
+import qvident.builders.JSWaiter;
 
 public class WaitingHelper {
 
     public static void waitAllRequestsOnPage() {
-        JSOnPageWaiter waiter = new JSOnPageWaiter();
+        JSWaiter waiter = new JSWaiter();
         waiter.waitAllRequest();
     }
 }

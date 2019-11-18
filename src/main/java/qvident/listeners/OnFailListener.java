@@ -6,7 +6,8 @@ import org.testng.ITestResult;
 
 import java.io.IOException;
 
-import static ebay.helpers.ScreenShotHelper.makeScreenshot;
+import static qvident.helpers.ScreenShotHelper.makeScreenshot;
+
 
 public class OnFailListener implements ITestListener {
 

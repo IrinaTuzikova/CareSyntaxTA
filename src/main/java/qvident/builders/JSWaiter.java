@@ -1,4 +1,4 @@
-package ebay.builders;
+package qvident.builders;
 
 import com.epam.jdi.light.driver.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /* Code from this resource :: https://www.swtestacademy.com/selenium-wait-javascript-angular-ajax/
  *  Check for updates there for the new versions. */
 
-public class JSOnPageWaiter {
+public class JSWaiter {
 
     private static WebDriver jsWaitDriver;
     private static WebDriverWait jsWait;
@@ -184,5 +184,4 @@ public class JSOnPageWaiter {
         }
     }
 }
-
 

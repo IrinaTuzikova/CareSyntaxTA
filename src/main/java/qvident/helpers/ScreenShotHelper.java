@@ -1,4 +1,4 @@
-package ebay.helpers;
+package qvident.helpers;
 
 import com.epam.jdi.light.driver.WebDriverFactory;
 import io.qameta.allure.Attachment;
@@ -7,7 +7,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
-
 import static com.epam.jdi.light.settings.WebSettings.logger;
 
 public class ScreenShotHelper {
